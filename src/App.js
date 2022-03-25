@@ -26,9 +26,9 @@ class App extends React.Component {
     var xmlDom = Blockly.Xml.workspaceToDom(
       this.simpleWorkspace.current.workspace
     );
-    var xmlText = Blockly.Xml.domToPrettyText(xmlDom); // this is what upload to firebase
+    var xmlText = Blockly.Xml.domToPrettyText(xmlDom); // string to upload to firebase
     var Textxml = Blockly.Xml.textToDom(xmlText);
-    console.log(xmlDom, xmlText, Textxml);
+    console.log(xmlText, Textxml, xmlDom);
   };
 
   runCode = () => {
@@ -55,6 +55,7 @@ class App extends React.Component {
             drag: true,
             wheel: true,
           }}
+          // initialXml='<xml xmlns="https://developers.google.com/blockly/xml"><block type="test_react_field" id="u8T:DVE=$),(_7zif])i" x="377" y="54"><field name="FIELD">Click me</field><field name="DATE1">Wed Jan 01 2020 00:00:00 GMT+0800 (Hong Kong Standard Time)</field></block></xml>'
         >
           <Block type="test_react_field" />
           <Block type="test_react_date_field" />
